@@ -1,0 +1,61 @@
+
+.container {
+    max-width: 65vw;
+    margin: 2rem auto;
+    padding: 20px 0px;
+}
+
+.mb3 {
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-direction: column;
+    /* padding:20px */
+
+}
+
+.mb3 input {
+    /* background-color: red; */
+    border: 1px solid #fff;
+    padding: 15px;
+    width: 50%;
+}
+
+.mb3 label {
+    margin: 20px 0;
+}
+
+.formLabel {
+    margin: 0px 34px;
+}
+
+.btn {
+    background: gray;
+    border-radius: 9px;
+    font-size: .97rem;
+    margin: 20px 0;
+    padding: 11px 32px;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 450px) {
+
+    .container {
+        max-width: 100%;
+
+    }
+
+    .mb3 input {
+        padding: 15px;
+        width: 80%;
+    }
+
+    .mb3 textarea {
+
+        width: 80%;
+    }
+}

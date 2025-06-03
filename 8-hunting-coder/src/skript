@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for i in *.json
+do
+    random=$(shuf -n1 /usr/share/dict/words | cut -d "'" -f 1)
+    newfileName="how-to-learn-${random}.json"
+    
+
+    # cat $i
+    jq ".slug = \"how-to-learn-$random\" | .title = \"How To Learn ${random^}\" " $i > $newfileName
+
+
+done
+
