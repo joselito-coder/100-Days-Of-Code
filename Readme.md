@@ -1,6 +1,6 @@
 # 100 days of code
 
-- Hey I will be practicing 100 days of code and creating 100 projects 
+- practicing 100 days of code by creating 100 projects 
 - Projects can be in next js or anything web related
 
 I am following a [blog](https://www.florin-pop.com/blog/100-days-100-projects/) that I found online when I tried searching `100 days of code` on google 
