@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 require("dotenv").config();
 
 
@@ -6,7 +8,45 @@ require("dotenv").config();
 
 const Quiz = () => {
 
-  // process.env.quizApiKey
+  const url = "http://localhost:3000/api/quiz"
+
+  const [quizData, setQuizData] = useState()
+  const [currentQuestion, setCurrentQuestion] = useState()
+
+
+  useEffect(() => {
+
+
+    const getData = async () => {
+
+      const data = await fetch(url).then(e => e.json())
+
+      setQuizData(data);
+
+    }
+
+
+    getData();
+
+  }, [])
+
+
+
+  useEffect(() => {
+    if (quizData) {
+
+      const asdf = structuredClone(quizData[0])
+
+      console.log(asdf)
+
+      setCurrentQuestion()
+    }
+
+  }, [quizData])
+
+
+
+
 
   return (
     <div>
@@ -14,11 +54,11 @@ const Quiz = () => {
         This is a Question
 
       </div>
-      <div className="options flex flex-wrap justify-center gap-4 mt-4  w-[85%] mx-auto">
+      <div className="options flex flex-wrap justify-center gap-4 mt-8  w-[85%] mx-auto">
         {Array(4).fill(4).map((e, index) => {
-          console.log(e,index)
+          console.log(e, index)
           return (
-            <div className='h-20 cursor-pointer bg-red-500 rounded-sm flex items-center justify-center flex-1/3' key={index} > {index + 1} </div>
+            <div className='h-20 cursor-pointer bg-slate-800 rounded-sm flex items-center justify-center flex-1/3' key={index} > {index + 1} </div>
           )
         })}
 
